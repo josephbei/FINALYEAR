@@ -1,0 +1,13 @@
+<h2>Process Permission for {{ perm.student.name }}</h2>
+<p>Type: {{ perm.get_permission_type_display }}</p>
+<p>Reason: {{ perm.reason }}</p>
+
+<form method="post">
+  {% csrf_token %}
+  <label>Note (optional)</label><br/>
+  <textarea name="note" rows="4" cols="50"></textarea><br/>
+  <button type="submit" name="action" value="approve">Approve</button>
+  <button type="submit" name="action" value="reject">Reject</button>
+  <button type="submit" name="action" value="escalate">Escalate</button>
+  <input type="hidden" name="next" value="{{ request.META.HTTP_REFERER }}">
+</form>

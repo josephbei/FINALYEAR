@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Exit Pass</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    .header { text-align: center; margin-bottom: 20px;}
+    .details { margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Exit Pass</h1>
+    <p>School Name</p>
+  </div>
+  <div class="details">
+    <p><strong>Student:</strong> {{ permission.student.name }} ({{ permission.student.reg_number }})</p>
+    <p><strong>Parent:</strong> {{ permission.student.parent.name }}</p>
+    <p><strong>Permission Type:</strong> {{ permission.get_permission_type_display }}</p>
+    <p><strong>Approved At:</strong> {{ permission.processed_at }}</p>
+    <p><strong>Approved By:</strong> {{ permission.processed_by.get_full_name }}</p>
+    <p><strong>Note:</strong> {{ permission.note }}</p>
+  </div>
+  <div style="margin-top:40px;">
+    <p>Signature: ____________________</p>
+  </div>
+</body>
+</html>

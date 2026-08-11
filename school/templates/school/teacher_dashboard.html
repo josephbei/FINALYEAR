@@ -1,0 +1,11 @@
+<h2>Teacher Dashboard — Pending Normal Requests</h2>
+<ul>
+  {% for p in requests %}
+    <li>
+      {{ p.student.name }} ({{ p.student.reg_number }}) - {{ p.reason }}
+      <a href="{% url 'process_permission' p.id %}">Process</a>
+    </li>
+  {% empty %}
+    <li>No pending requests</li>
+  {% endfor %}
+</ul>

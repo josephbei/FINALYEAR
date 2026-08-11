@@ -1,0 +1,11 @@
+<h2>Parent dashboard</h2>
+<p>Welcome {{ parent.name }}</p>
+<h3>Your children</h3>
+<ul>
+  {% for s in students %}
+    <li>{{ s.name }} ({{ s.reg_number }})</li>
+  {% empty %}
+    <li>No students yet</li>
+  {% endfor %}
+</ul>
+<p><a href="{% url 'create_permission' %}">Request emergency permission</a></p>

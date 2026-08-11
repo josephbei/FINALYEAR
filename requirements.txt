@@ -1,0 +1,6 @@
+Django>=4.2
+weasyprint
+twilio
+python-dotenv
+djangorestframework
+django-cors-headers
